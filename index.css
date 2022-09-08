@@ -1,0 +1,228 @@
+/* $font-stack: Helvetica, sans-serif;`
+$tomato: #FF6347;
+$leaves: #A8B848; */
+
+body { 
+    background: #000;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tamatar{
+  color: white;
+  margin: auto;
+  
+}
+#container {
+ background-image: url('https://www.solidbackgrounds.com/images/3840x2160/3840x2160-tomato-solid-color-background.jpg');
+/*   background: $tomato; */
+	block-size:60px;
+	inline-size:80px;
+	border-radius:10 0 50px 50px;
+	position:relative;
+	transition: all .3s ease-in-out;
+  
+  /* a black shadow from left and white from right */
+  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
+    inset -3px 0 5px 2px rgba(255,255,255,0.16);
+  background-size: 190px;
+  margin: 80px auto;
+  border-radius: 50%;
+  position: relative;
+  inset-block-start: 7px;
+  animation-name: move,scale,rotate;
+  animation-duration: 4s,4s,4s;
+  animation-iteration-count: infinite,infinite,infinite;
+  animation-timing-function: ease-in-out,linear,linear;
+}
+
+
+#tomato:hover {
+	transform: scale(1.2);
+}
+
+/* #tomato::before{
+	content:"";
+	inline-size:32px;
+	block-size:32px;
+	border: 1px solid $tomato;
+	background: $tomato;
+	position:absolute;
+	border-radius:0 32px 0 0;
+	inset-block-start:-32px;
+	inset-inline-end:0;
+
+} */
+
+/* #tomato::after {
+	content: "";
+	inline-size:32px;
+	block-size:32px;
+	border: 1px solid $tomato;
+	background: $tomato;
+	position:absolute;
+	border-radius:32px 0 0 0;
+	inset-block-start:-32px;
+	transition: all .2s ease-in-out;
+} */
+
+/* #tomatoFill {
+	inline-size:36px;
+	block-size:16px;
+	background: $tomato;
+	position:absolute;
+	inset-block-start:-16px;
+	inset-inline-start:32px;
+	transition: all .2s ease-in-out;
+} */
+
+/* #tomatoFill::before {
+	content: "";
+	inline-size:18px;
+	block-size:16px;
+	background: $tomato;
+	position:absolute;
+	border-radius:0 16px 0 0;
+	inset-block-start:-16px;
+	transition: all .2s ease-in-out;
+} */
+
+/* #tomatoFill::after {
+	content: "";
+	inline-size:18px;
+	block-size:16px;
+	background: $tomato;
+	position:absolute;
+	border-radius:16px 0 0 0;
+	inset-block-start:-16px;
+	inset-inline-end:0;
+	transition: all .2s ease-in-out;
+}
+
+#tomatoTop {
+	background: $leaves;
+	block-size:16px;
+	inline-size:16px;
+	border-radius:16px 0 16px 0;
+	position:absolute;
+	transform: rotateZ(135deg);
+	inset-block-start:-16px;
+	z-index:1;
+	inset-inline-start: 32px +  18px / 2;
+	transition: all .2s ease-in-out;
+}
+
+#tomatoinset-block-start::before {
+	content: "";
+	background: $leaves;
+	block-size:16px;
+	inline-size:16px;
+	border-radius:16px 0 16px 0;
+	position:absolute;
+	z-index:1;
+	transform: rotateZ(90deg);
+	inset-block-start:12px;
+	transition: all .2s ease-in-out;
+}
+
+#tomatoinset-block-start::after {
+	content: "";
+	background: $leaves;
+	block-size:16px;
+	inline-size:16px;
+	border-radius:16px 0 16px 0;
+	position:absolute;
+	z-index:1;
+	transform: rotateZ(90deg);
+	inset-block-start:-2px;
+	inset-inline-end:13px;
+	transition: all .2s ease-in-out;
+}
+ */
+
+@keyframes move {
+  0%   { inset-inline-start: 200px;  }  
+  70%  { inset-inline-start: -200px; }
+  100% { inset-inline-start: 200px;  }
+}
+
+@keyframes scale {
+  0%  { transform: scale(1);   }
+  32% { transform: scale(0.4); animation-timing-function:  ease-in; }
+  70% { transform: scale(1); animation-timing-function:  ease-in;  }
+  75% { transform: scale(1.2);  animation-timing-function:  ease-in-out; }
+  86% { transform: scale(2);  }  
+  98% { transform: scale(1.2); }
+  100%{ transform: scale(1); }
+}
+ 
+@keyframes rotate {
+  0% { background-position: 0px; }
+  100% { background-position: 190px; }
+}
+
+/* Stars 
+------------------------------------- */
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  } 
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
